@@ -15,7 +15,7 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 #%%
 from sklearn.svm import SVC
-classifier = SVC(kernel = 'rbf', random_state = 0)
+classifier = SVC(kernel = 'linear', random_state = 0)
 classifier.fit(X_train, y_train)
 #%%
 y_pred = classifier.predict(X_test)
