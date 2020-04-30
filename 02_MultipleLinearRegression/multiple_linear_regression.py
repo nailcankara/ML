@@ -23,7 +23,7 @@ regressor.fit(X_train, y_train)
 
 y_pred = regressor.predict(X_test)
 
-import statsmodels.formula.api as sm #model selection
+import statsmodels.api as sm #model selection
 X = np.append(arr=np.ones((50,1)).astype(int) ,values=X , axis = 1)   #Adding x0 as
 
 X_opt = X[:,[0,3,5]]   #important features
@@ -31,7 +31,7 @@ regressor_OLS = sm.OLS(endog = y , exog = X_opt).fit()
 regressor_OLS.summary()
 
 #Automatic p values
-import statsmodels.formula.api as sm
+import statsmodels.api as sm
 def backwardElimination(x, sl):
     numVars = len(x[0])
     for i in range(0, numVars):
